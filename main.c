@@ -82,7 +82,7 @@ static int	checksoranddup(int **a, int *sizea, int **b)
 	if (ft_checkdup(*a, *sizea) || ft_issorted(*a, *sizea))
 	{
 		if (ft_checkdup(*a, *sizea))
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 		ft_safe_free(a);
 		ft_safe_free(b);
 		return (1);
@@ -111,7 +111,6 @@ int	main(int argc, char *argv[])
 	if (checksoranddup(&a, &sizea, &b) == 1)
 		return (0);
 	ft_initiatesort(&a, &sizea, &b, &sizeb);
-	print_array(a, sizea);
 	ft_safe_free(&a);
 	ft_safe_free(&b);
 	return (0);
