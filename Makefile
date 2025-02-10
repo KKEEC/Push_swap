@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = main.c ft_utils/ft_atol.c ft_utils/ft_countsubstr.c ft_utils/ft_handleargs.c \
+SRC = main.c ft_utils/ft_atol.c ft_utils/ft_countsubstr.c ft_utils/ft_handleargs.c ft_utils/ft_calloc.c \
       ft_utils/ft_isvalidarg.c ft_utils/ft_split.c ft_utils/ft_utils.c \
       ft_rules/push.c ft_rules/swap.c ft_rules/rotate.c ft_rules/revrotate.c \
       ft_utils/ft_initiatesort.c ft_utils/ft_issorted.c ft_utils/ft_checkdup.c \
@@ -11,18 +11,20 @@ SRC = main.c ft_utils/ft_atol.c ft_utils/ft_countsubstr.c ft_utils/ft_handleargs
 
 OBJ = $(SRC:.c=.o)
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g -Ift_utils -Ift_rules  # Add -I flags
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: clean fclean re all

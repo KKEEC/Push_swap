@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sortuntil19.c                                   :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkc <kkc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 11:06:17 by kkc               #+#    #+#             */
-/*   Updated: 2025/02/10 11:06:18 by kkc              ###   ########.fr       */
+/*   Created: 2025/02/10 10:50:15 by kkc               #+#    #+#             */
+/*   Updated: 2025/02/10 10:54:24 by kkc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utils.h"
 
-void	ft_sortuntil19(int **a, int *sizea, int **b, int *sizeb)
+void	ft_bzero(void *block, size_t size)
 {
-	int	i;
-	int	midval;
+	size_t	i;
+	char	*ptr;
 
-	if (ft_issorted(*a, *sizea))
-		return ;
-	i = *sizea;
-	midval = ft_get_median(*a, *sizea);
-	while (i > 0)
+	ptr = (char *)block;
+	i = 0;
+	while (i < size)
 	{
-		if ((*a)[0] < midval)
-			pb(*a, sizea, *b, sizeb);
-		else
-			ra(*a, *sizea);
-		i--;
+		ptr[i] = '\0';
+		i++;
 	}
-	ft_sortboth(a, sizea, b, sizeb);
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*arr;
+
+	arr = malloc(nmemb * size);
+	if (!arr)
+		return (NULL);
+	ft_bzero(arr, nmemb * size);
+	return (arr);
 }

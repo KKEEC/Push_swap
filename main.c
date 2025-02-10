@@ -12,19 +12,6 @@
 
 #include "ft_utils/ft_utils.h"
 
-void	print_array(int *a, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		printf("%d ", a[i]);
-		i++;
-	}
-	printf("\n");
-}
-
 void	handle_single_argument(char **arg, int **a, int **b)
 {
 	int	count;
@@ -38,7 +25,7 @@ void	handle_single_argument(char **arg, int **a, int **b)
 			return ;
 		}
 		count = ft_countsubstr(*arg, ' ');
-		*b = (int *)calloc(count, sizeof(int));
+		*b = (int *)ft_calloc(count, sizeof(int));
 		if (!*b)
 		{
 			ft_safe_free(a);

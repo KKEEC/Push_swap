@@ -6,14 +6,13 @@
 /*   By: kkc <kkc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:15:44 by kkc               #+#    #+#             */
-/*   Updated: 2025/02/09 16:35:24 by kkeec            ###   ########.fr       */
+/*   Updated: 2025/02/10 10:53:47 by kkc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_UTILS_H
 # define FT_UTILS_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
@@ -39,6 +38,7 @@ int		ft_issorteddesc(int *a, int size);
 int		ft_maxindex(int *a, int size);
 int		ft_minindex(int *a, int size);
 int		ft_get_median(int *array, int length);
+void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_duparray(int *array, int *temparr, int size);
 void	ft_initiatesort(int **a, int *sizea, int **b, int *sizeb);
 void	ft_sorttwonums(int **a, int *sizea);

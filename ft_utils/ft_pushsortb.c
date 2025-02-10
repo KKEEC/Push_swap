@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_pushsortb.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kkc <kkc@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/10 11:05:51 by kkc               #+#    #+#             */
+/*   Updated: 2025/02/10 11:05:53 by kkc              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_utils.h"
 
 int	valueexists(int *chunkarr, int index, int value)
@@ -76,7 +88,7 @@ void	pushsortb(int **a, int *sizea, int **b, int *sizeb)
 	chunk_size = (*sizea / chunk_parts) + (*sizea % chunk_parts);
 	while (chunk_parts > 0)
 	{
-		chunkarr = (int *)calloc(chunk_size, sizeof(int));
+		chunkarr = (int *)ft_calloc(chunk_size, sizeof(int));
 		if (!chunkarr)
 			return ;
 		find_chunkelem(a, sizea, chunkarr, &chunk_size);
